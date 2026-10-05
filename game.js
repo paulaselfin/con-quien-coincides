@@ -252,9 +252,42 @@ const AGREE = [
       },
     ],
   },
+  {
+    id: "sanidad",
+    type: "agree",
+    topic: "Sanidad",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "sumar",
+        text: "Impedir la gestión privada de la sanidad y devolver a lo público la limpieza, la hostelería y la lavandería de los hospitales.",
+      },
+      {
+        party: "vox",
+        text: "Devolver al Estado las competencias de sanidad de las comunidades autónomas, para un sistema único en toda España.",
+      },
+      {
+        party: "pp",
+        text: "Un plan de choque en atención primaria: mil plazas más de medicina de familia en 2024 y jubilación activa de esos médicos hasta los 72 años.",
+      },
+      {
+        party: "psoe",
+        text: "Sanidad pública, gratuita y universal, y que paguen menos por los medicamentos quienes ganan menos de 18.000 euros.",
+      },
+    ],
+  },
 ];
 
 const GUESS = [
+  {
+    id: "sanidad-listas",
+    type: "guess",
+    topic: "Listas de espera",
+    text: "Bajar las listas de espera incentivando a los hospitales públicos y reforzando los conciertos con la sanidad privada.",
+    party: "vox",
+    why: "Es la medida 109 del programa de Vox. Sumar pide una ley de tiempos máximos de espera y acabar con la gestión privada, no más conciertos.",
+    distractors: ["pp", "psoe", "sumar"],
+  },
   {
     id: "violencia",
     type: "guess",
@@ -437,7 +470,7 @@ function pickRounds(pool, count) {
   return [...fresh, ...repeated].slice(0, count).map(cloneRound);
 }
 
-const PINNED_IDS = ["ocupacion", "inmigracion", "impuestos", "lgtbi"];
+const PINNED_IDS = ["ocupacion", "inmigracion", "impuestos", "lgtbi", "sanidad"];
 
 function freshGame() {
   const pinned = AGREE.filter((round) => PINNED_IDS.includes(round.id)).map(cloneRound);
@@ -445,12 +478,13 @@ function freshGame() {
     ...pinned,
     ...pickRounds(
       [...AGREE.filter((round) => !PINNED_IDS.includes(round.id)), ...AGREE_CONGRESO],
-      2
+      1
     ),
   ]);
   const guess = shuffle([
     ...pickRounds(GUESS_CONGRESO, 1),
-    ...pickRounds(GUESS, 1),
+    ...pickRounds(GUESS.filter((round) => round.id === "sanidad-listas"), 1),
+    ...pickRounds(GUESS.filter((round) => round.id !== "sanidad-listas"), 1),
   ]);
   previousIds = new Set([...agree, ...guess].map((round) => round.id));
   state = {
@@ -509,7 +543,7 @@ function startView() {
   return `
     <p class="kicker">Elecciones generales 2023</p>
     <h1>Con quién coincides</h1>
-    <p class="lead">Ocho preguntas cortas, y cada partida salen otras. Unas vienen de los programas de 2023. Otras, de proposiciones y proyectos de ley de esta legislatura en el Congreso.</p>
+    <p class="lead">Nueve preguntas cortas, y cada partida salen otras. Unas vienen de los programas de 2023. Otras, de proposiciones y proyectos de ley de esta legislatura en el Congreso.</p>
     <section class="panel">
       <p class="help">En unas eliges la propuesta con la que estás más de acuerdo y después te decimos de qué partido era. En otras te damos una frase y tienes que adivinar el partido.</p>
       <div class="parties">${pills}</div>
