@@ -35,11 +35,11 @@ const PARTIES = {
     blurb: "Junts per Catalunya. Independentismo catalán.",
     color: "#0d86b5",
   },
-  gobierno: {
-    name: "Gobierno",
-    hint: "proyecto de ley",
-    blurb: "No es un grupo del Congreso. Es el Gobierno, que envía proyectos de ley a la Cámara.",
-    color: "#6b3f2a",
+  "psoe-sumar": {
+    name: "PSOE+Sumar",
+    hint: "coalición",
+    blurb: "PSOE y Sumar están juntos en el Gobierno. Si la propuesta la envía el Gobierno, aquí cuenta como PSOE+Sumar.",
+    color: "#c13a52",
   },
 };
 
@@ -391,23 +391,21 @@ const GUESS_CONGRESO = [
     id: "ceuta-ayudas",
     type: "guess",
     topic: "Ceuta",
-    originLabel: "Proyecto de ley del Gobierno. BOCG, 25 de septiembre de 2026.",
-    prompt: "¿Quién presentó esto en el Congreso?",
+    originLabel: "Proyecto de ley publicado en el BOCG el 25 de septiembre de 2026.",
     text: "En Ceuta, 5.000 euros a cada autónomo y entre 10.000 y 150.000 euros a las empresas, según su facturación, por la crisis migratoria de julio de 2026.",
-    party: "gobierno",
-    why: "Está en el artículo 1 del proyecto de ley de medidas urgentes para Ceuta, que sale del real decreto-ley 22/2026. El Congreso lo convalidó el 16 de septiembre de 2026. Lo presenta el Gobierno, no el grupo del PSOE ni el del PP.",
-    distractors: ["psoe", "pp", "sumar"],
+    party: "psoe-sumar",
+    why: "Está en el artículo 1 del proyecto de ley de medidas urgentes para Ceuta, que sale del real decreto-ley 22/2026. El Congreso lo convalidó el 16 de septiembre de 2026. Lo envía el Gobierno, formado por PSOE y Sumar, así que aquí la respuesta es PSOE+Sumar.",
+    distractors: ["pp", "vox", "erc"],
   },
   {
     id: "ceuta-cuotas",
     type: "guess",
     topic: "Ceuta y Melilla",
-    originLabel: "Proposición de ley del Congreso. BOCG, 25 de octubre de 2024.",
-    prompt: "¿Quién presentó esto en el Congreso?",
+    originLabel: "Proposición de ley publicada en el BOCG el 25 de octubre de 2024.",
     text: "Recuperar la bonificación de las cuotas de la Seguridad Social que pagan los empresarios de Ceuta y Melilla.",
     party: "pp",
-    why: "Es una proposición de ley del Grupo Popular, admitida a trámite el 22 de octubre de 2024. No es el paquete de ayudas del Gobierno para Ceuta de 2026.",
-    distractors: ["gobierno", "psoe", "vox"],
+    why: "Es una proposición de ley del Grupo Popular, admitida a trámite el 22 de octubre de 2024. No es el paquete de ayudas para Ceuta de 2026, que envió el Gobierno de PSOE y Sumar.",
+    distractors: ["psoe-sumar", "vox", "erc"],
   },
 ];
 
@@ -470,8 +468,8 @@ function partyLabel(id) {
 }
 
 function partyMark(id) {
-  if (id === "gobierno") {
-    return `<span class="party-logo party-word" role="img" aria-label="Gobierno">Gobierno</span>`;
+  if (id === "psoe-sumar") {
+    return `<span class="coalition-logos">${partyMark("psoe")}${partyMark("sumar")}</span>`;
   }
   return `<img class="party-logo" src="logos/${id}.svg" alt="${partyLabel(id)}">`;
 }
@@ -495,7 +493,7 @@ function render() {
 }
 
 function startView() {
-  const pills = Object.entries(PARTIES).filter(([id]) => id !== "gobierno")
+  const pills = Object.entries(PARTIES).filter(([id]) => id !== "psoe-sumar")
     .map(
       ([id, party]) => `
         <div class="party-pill">
@@ -577,8 +575,10 @@ function guessBody(round) {
         if (id === state.picked) classes.push("picked");
         if (id !== state.picked) classes.push("dim");
       }
+      const logos = id === "psoe-sumar" ? partyMark(id) : "";
       return `
         <button class="${classes.join(" ")}" data-party="${id}" ${state.phase === "feedback" ? "disabled" : ""}>
+          ${logos}
           <p>${partyLabel(id)}</p>
         </button>`;
     })
@@ -627,7 +627,7 @@ function feedbackView(round) {
 
 function resultView() {
   const ranking = Object.entries(state.agrees)
-    .filter(([id, count]) => id !== "gobierno" || count > 0)
+    .filter(([id, count]) => id !== "psoe-sumar" || count > 0)
     .sort((a, b) => b[1] - a[1] || partyLabel(a[0]).localeCompare(partyLabel(b[0]), "es"));
   const top = ranking[0][1];
   const winners = ranking.filter(([, count]) => count === top).map(([id]) => id);

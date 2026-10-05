@@ -200,12 +200,15 @@ h2 {
   text-align: right;
 }
 
-.party-word {
+.coalition-logos {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.92rem;
+  gap: 6px;
+  flex: none;
+}
+
+.coalition-logos .party-logo {
+  width: 72px;
+  height: 36px;
 }
 
 .choices {
