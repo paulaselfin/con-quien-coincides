@@ -210,18 +210,51 @@ const AGREE = [
       },
     ],
   },
+  {
+    id: "ocupacion",
+    type: "agree",
+    topic: "Ocupación",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "pp",
+        text: "Desalojar en un máximo de 24 horas y castigar la usurpación con hasta 3 años de cárcel.",
+        note: "Vox también pide mano dura con la ocupación. El plazo de 24 horas y los 3 años de cárcel están en el programa del PP.",
+      },
+      {
+        party: "psoe",
+        text: "Desalojar a los ocupas ilegales en un máximo de 48 horas, y atender también la vulnerabilidad social.",
+      },
+      {
+        party: "vox",
+        text: "Tolerancia cero: proteger al propietario frente a las mafias y la entrada ilegal, y no cobrarle el IBI mientras la casa siga ocupada.",
+      },
+    ],
+  },
+  {
+    id: "lgtbi",
+    type: "agree",
+    topic: "LGTBI",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "psoe",
+        text: "Incluir las terapias de conversión como delito en el código penal.",
+        note: "ERC también pide criminalizar las terapias de conversión. Esta frase está en el programa del PSOE.",
+      },
+      {
+        party: "sumar",
+        text: "Erradicar por completo las llamadas terapias de conversión, como ya dice la Ley 4/2023.",
+      },
+      {
+        party: "vox",
+        text: "Derogar las leyes LGTBI y la ley trans, y prohibir hormonas y cirugías de cambio de sexo en los menores.",
+      },
+    ],
+  },
 ];
 
 const GUESS = [
-  {
-    id: "desalojo",
-    type: "guess",
-    topic: "Vivienda ocupada",
-    text: "Si ocupan una casa de forma ilegal, el desalojo tiene que poder hacerse como máximo en 24 horas.",
-    party: "pp",
-    why: "El PP lo puso como medida concreta: desalojo en un plazo máximo de 24 horas. Vox también quería mano dura con la ocupación, pero esta frase de las 24 horas es del PP.",
-    distractors: ["vox", "psoe", "sumar"],
-  },
   {
     id: "violencia",
     type: "guess",
@@ -378,7 +411,6 @@ const GUESS_CONGRESO = [
   },
 ];
 
-const QUESTIONS_PER_KIND = 4;
 let previousIds = new Set();
 
 const app = document.querySelector("#app");
@@ -396,7 +428,7 @@ function shuffle(list) {
 function cloneRound(round) {
   return {
     ...round,
-    options: round.options?.map((option) => ({ ...option })),
+    options: round.options ? shuffle(round.options.map((option) => ({ ...option }))) : undefined,
     distractors: round.distractors?.slice(),
   };
 }
@@ -407,14 +439,20 @@ function pickRounds(pool, count) {
   return [...fresh, ...repeated].slice(0, count).map(cloneRound);
 }
 
+const PINNED_IDS = ["ocupacion", "inmigracion", "impuestos", "lgtbi"];
+
 function freshGame() {
+  const pinned = AGREE.filter((round) => PINNED_IDS.includes(round.id)).map(cloneRound);
   const agree = shuffle([
-    ...pickRounds(AGREE_CONGRESO, 1),
-    ...pickRounds(AGREE, QUESTIONS_PER_KIND - 1),
+    ...pinned,
+    ...pickRounds(
+      [...AGREE.filter((round) => !PINNED_IDS.includes(round.id)), ...AGREE_CONGRESO],
+      2
+    ),
   ]);
   const guess = shuffle([
     ...pickRounds(GUESS_CONGRESO, 1),
-    ...pickRounds(GUESS, QUESTIONS_PER_KIND - 1),
+    ...pickRounds(GUESS, 1),
   ]);
   previousIds = new Set([...agree, ...guess].map((round) => round.id));
   state = {
