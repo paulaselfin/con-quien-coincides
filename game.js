@@ -140,6 +140,14 @@ const AGREE = [
         text: "Aprobar una ley de amnistía para todas las personas represaliadas por el conflicto entre Catalunya y España.",
         note: "ERC también pide una amnistía. Esta frase está en el programa de Junts.",
       },
+      {
+        party: "psoe",
+        text: "Seguir el diálogo con Catalunya dentro de la Constitución, para recuperar la convivencia.",
+      },
+      {
+        party: "vox",
+        text: "Volver a castigar como delito un referéndum ilegal y la sedición, y subir esas penas.",
+      },
     ],
   },
   {
@@ -176,6 +184,10 @@ const AGREE = [
         party: "psoe",
         text: "Seguir con un proyecto piloto para que empresas industriales reduzcan la jornada, sin bajar el sueldo.",
       },
+      {
+        party: "pp",
+        text: "Más flexibilidad de horario y un banco de horas, sin cambiar las horas trabajadas ni el sueldo.",
+      },
     ],
   },
   {
@@ -191,6 +203,10 @@ const AGREE = [
       {
         party: "pp",
         text: "Acelerar las expulsiones de inmigrantes irregulares y de quienes hayan cometido un delito, con acuerdos con sus países.",
+      },
+      {
+        party: "sumar",
+        text: "Abrir un procedimiento permanente para regularizar a quien está en España sin papeles.",
       },
     ],
   },
@@ -541,10 +557,9 @@ function feedbackView(round) {
   if (round.type === "agree") {
     const chosen = round.options[state.picked];
     const party = PARTIES[chosen.party];
-    const others = round.options
-      .filter((_, index) => index !== state.picked)
-      .map((option) => `${partyLabel(option.party)}`)
-      .join(" y ");
+    const others = joinNames(
+      round.options.filter((_, index) => index !== state.picked).map((option) => option.party)
+    );
     return `
       <section class="feedback ok">
         <h3>Esta propuesta es de ${party.name}</h3>
