@@ -403,8 +403,10 @@ h2 {
   line-height: 1.45;
 }
 
-.sources a {
+.sources a,
+.source-link {
   color: inherit;
+  font-weight: 600;
 }
 
 @media (max-width: 560px) {
