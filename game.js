@@ -62,6 +62,10 @@ const AGREE = [
         party: "sumar",
         text: "Obligar a los grandes propietarios a ofrecer alquiler social y regular de verdad el precio del alquiler.",
       },
+      {
+        party: "vox",
+        text: "Quitar el IVA de la primera vivienda habitual y recuperar la deducción por vivienda en la declaración de la renta.",
+      },
     ],
   },
   {
@@ -249,6 +253,10 @@ const AGREE = [
       {
         party: "vox",
         text: "Derogar las leyes LGTBI y la ley trans, y prohibir hormonas y cirugías de cambio de sexo en los menores.",
+      },
+      {
+        party: "pp",
+        text: "Aprobar una ley de derechos de las personas transexuales, pactada con diálogo, y legislar con prudencia frente a las posiciones más extremas.",
       },
     ],
   },
