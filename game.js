@@ -485,7 +485,7 @@ const AGREE = [
 const GUESS = [
   {
     id: "iva",
-    type: "guess",
+    type: "stance",
     topic: "IVA de la comida",
     text: "Bajar un tiempo el IVA de la carne, el pescado y las conservas.",
     party: "pp",
@@ -494,7 +494,7 @@ const GUESS = [
   },
   {
     id: "autonomos",
-    type: "guess",
+    type: "stance",
     topic: "Cuota de autónomos",
     text: "Tarifa 0 el primer año para quien se haga autónomo, y poder dejar sin pagar tres cuotas al año.",
     party: "pp",
@@ -503,7 +503,7 @@ const GUESS = [
   },
   {
     id: "transporte",
-    type: "guess",
+    type: "stance",
     topic: "Transporte",
     text: "Transporte público urbano gratis para niños y estudiantes hasta los 24 años.",
     party: "psoe",
@@ -512,7 +512,7 @@ const GUESS = [
   },
   {
     id: "sanidad-listas",
-    type: "guess",
+    type: "stance",
     topic: "Listas de espera",
     text: "Bajar las listas de espera incentivando a los hospitales públicos y reforzando los conciertos con la sanidad privada.",
     party: "vox",
@@ -521,7 +521,7 @@ const GUESS = [
   },
   {
     id: "violencia",
-    type: "guess",
+    type: "stance",
     topic: "Violencia de género",
     text: "Derogar la Ley Integral de Violencia de Género.",
     party: "vox",
@@ -530,7 +530,7 @@ const GUESS = [
   },
   {
     id: "deficit",
-    type: "guess",
+    type: "stance",
     topic: "Dinero y Catalunya",
     text: "Cada año salen de Catalunya unos 20.200 millones que se pagan al Estado y no vuelven. Hay que acabar con ese déficit fiscal.",
     party: "junts",
@@ -540,7 +540,7 @@ const GUESS = [
   {
     id: "vientres",
     family: "abolicion",
-    type: "guess",
+    type: "stance",
     topic: "Derechos",
     text: "Ni prostitución ni vientres de alquiler: abolir la prostitución y prohibir la gestación por sustitución.",
     party: "psoe",
@@ -549,7 +549,7 @@ const GUESS = [
   },
   {
     id: "cannabis",
-    type: "guess",
+    type: "stance",
     topic: "Cannabis",
     text: "Despenalizar la producción y el consumo propio de cannabis sin ánimo de lucro, y regular las asociaciones de autoconsumo.",
     party: "sumar",
@@ -558,7 +558,7 @@ const GUESS = [
   },
   {
     id: "toros",
-    type: "guess",
+    type: "stance",
     topic: "Toros",
     text: "Quitar la ley que protege los toros como cultura y dejar de pagar con dinero público las corridas en las que muere el animal.",
     party: "sumar",
@@ -567,7 +567,7 @@ const GUESS = [
   },
   {
     id: "herencia",
-    type: "guess",
+    type: "stance",
     topic: "Juventud",
     text: "Dar 20.000 euros a cada persona al cumplir 23 años, pagados con un impuesto a las grandes fortunas.",
     party: "sumar",
@@ -576,7 +576,7 @@ const GUESS = [
   },
   {
     id: "bono",
-    type: "guess",
+    type: "stance",
     topic: "Luz y gas",
     text: "Crear un bono social único: un pago directo que sustituya las ayudas actuales de la luz y del gas.",
     party: "pp",
@@ -585,7 +585,7 @@ const GUESS = [
   },
   {
     id: "anticonceptivos",
-    type: "guess",
+    type: "stance",
     topic: "Salud",
     text: "Preservativos y anticonceptivos gratis para la gente joven, en sitios a los que va la juventud.",
     party: "psoe",
@@ -594,7 +594,7 @@ const GUESS = [
   },
   {
     id: "monarquia",
-    type: "guess",
+    type: "stance",
     topic: "Monarquía",
     text: "Abolir la monarquía y apoyar un referéndum para elegir entre monarquía y república.",
     party: "erc",
@@ -603,7 +603,7 @@ const GUESS = [
   },
   {
     id: "aeropuertos",
-    type: "guess",
+    type: "stance",
     topic: "Aeropuertos",
     text: "Que Catalunya gestione los aeropuertos de El Prat, Girona, Reus y Sabadell.",
     party: "junts",
@@ -612,7 +612,7 @@ const GUESS = [
   },
   {
     id: "menas",
-    type: "guess",
+    type: "stance",
     topic: "Menores migrantes",
     text: "Cerrar los centros de menores extranjeros no acompañados y devolver a esos menores con su familia, a su país.",
     party: "vox",
@@ -622,7 +622,7 @@ const GUESS = [
   {
     id: "jornada-sumar",
     family: "jornada",
-    type: "guess",
+    type: "stance",
     topic: "Jornada laboral",
     text: "Bajar por ley la jornada máxima a 37,5 horas sin bajar el sueldo, y seguir después hacia las 32 horas semanales.",
     party: "sumar",
@@ -632,7 +632,7 @@ const GUESS = [
   {
     id: "avales",
     family: "hipoteca",
-    type: "guess",
+    type: "stance",
     topic: "Hipotecas jóvenes",
     text: "Avalar hipotecas de hasta el 95% del precio de la vivienda para jóvenes de hasta 35 años.",
     party: "pp",
@@ -641,7 +641,7 @@ const GUESS = [
   },
   {
     id: "selectividad",
-    type: "guess",
+    type: "stance",
     topic: "Universidad",
     text: "Una prueba de acceso a la universidad igual en toda España, también en cómo se corrige.",
     party: "pp",
@@ -651,7 +651,7 @@ const GUESS = [
   {
     id: "desalojo-24",
     family: "ocupacion",
-    type: "guess",
+    type: "stance",
     topic: "Ocupación",
     text: "Desalojar como máximo en 24 horas desde el requerimiento, si quien ocupa no acredita un título para quedarse.",
     party: "pp",
@@ -660,7 +660,7 @@ const GUESS = [
   },
   {
     id: "creditos",
-    type: "guess",
+    type: "stance",
     topic: "Universidad",
     text: "Si apruebas una asignatura a la primera, esos créditos de universidad o de FP superior son gratis al curso siguiente.",
     party: "psoe",
@@ -683,7 +683,7 @@ const GUESS = [
   },
   {
     id: "referendum-int",
-    type: "guess",
+    type: "stance",
     topic: "Catalunya",
     text: "Negociar un referéndum de autodeterminación en Catalunya, con acompañamiento internacional.",
     party: "erc",
@@ -692,7 +692,7 @@ const GUESS = [
   },
   {
     id: "injurias",
-    type: "guess",
+    type: "stance",
     topic: "Monarquía",
     text: "Quitar del código penal el delito de injurias a la Corona.",
     party: "erc",
@@ -701,7 +701,7 @@ const GUESS = [
   },
   {
     id: "sociedades",
-    type: "guess",
+    type: "stance",
     topic: "Impuesto de sociedades",
     text: "Bajar del 25% al 20% el tipo nominal del impuesto de sociedades para las pymes.",
     party: "junts",
@@ -724,7 +724,7 @@ const GUESS = [
   {
     id: "sucesiones-ley",
     family: "sucesiones",
-    type: "guess",
+    type: "stance",
     topic: "Herencias",
     originLabel: "Proposición de ley de Vox. BOCG, 12 de enero de 2024. No es una ley aprobada.",
     text: "Suprimir el impuesto sobre sucesiones y donaciones.",
@@ -735,7 +735,7 @@ const GUESS = [
   {
     id: "nuclear-ley",
     family: "nuclear",
-    type: "guess",
+    type: "stance",
     topic: "Energía nuclear",
     originLabel: "Proposición de ley del PP. BOCG, 11 de abril de 2025. No es una ley aprobada.",
     text: "Prorrogar las centrales nucleares si cumplen las condiciones de seguridad, y que el plan energético no cuente con cerrarlas.",
@@ -746,7 +746,7 @@ const GUESS = [
   {
     id: "temporada-causa",
     family: "temporada",
-    type: "guess",
+    type: "stance",
     topic: "Alquiler temporal",
     originLabel: "Proposición de ley conjunta. BOCG, 5 de julio de 2024. No es una ley aprobada.",
     prompt: "¿Quién la presentó?",
@@ -758,7 +758,7 @@ const GUESS = [
   {
     id: "temporada-plazo",
     family: "temporada",
-    type: "guess",
+    type: "stance",
     topic: "Alquiler temporal",
     originLabel: "Proposición de ley conjunta. BOCG, 5 de julio de 2024. No es una ley aprobada.",
     prompt: "¿Quién la presentó?",
@@ -935,7 +935,7 @@ const AGREE_CONGRESO = [
 const GUESS_CONGRESO = [
   {
     id: "ceuta-ayudas",
-    type: "guess",
+    type: "stance",
     topic: "Ceuta",
     originLabel: "Proyecto de ley publicado en el BOCG el 25 de septiembre de 2026.",
     text: "En Ceuta, 5.000 euros a cada autónomo y entre 10.000 y 150.000 euros a las empresas, según su facturación, por la crisis migratoria de julio de 2026.",
@@ -945,7 +945,7 @@ const GUESS_CONGRESO = [
   },
   {
     id: "ceuta-cuotas",
-    type: "guess",
+    type: "stance",
     topic: "Ceuta y Melilla",
     originLabel: "Proposición de ley publicada en el BOCG el 25 de octubre de 2024.",
     text: "Recuperar la bonificación de las cuotas de la Seguridad Social que pagan los empresarios de Ceuta y Melilla.",
@@ -1048,7 +1048,7 @@ const LANES = {
   aeropuertos: "territorial",
 };
 
-const HOUSING_EXTRA = ["vivienda-compra", "turisticos", "vivienda-congreso", "temporada-causa", "temporada-plazo", "avales", "desalojo-24"];
+const HOUSING_EXTRA = ["temporada-causa", "temporada-plazo", "avales", "desalojo-24", "impuesto-no-ue"];
 
 function allRounds() {
   return [...AGREE, ...GUESS, ...AGREE_CONGRESO, ...GUESS_CONGRESO].map((round) => ({
@@ -1076,19 +1076,20 @@ function takeRounds(pool, count, usedFamilies) {
 }
 
 function freshGame() {
-  const pool = allRounds();
+  const pool = allRounds().filter((round) => round.type === "stance");
   const usedFamilies = new Set();
   const byLane = (lane, skip = []) => pool.filter((round) => round.lane === lane && !skip.includes(round.id));
-  const housing = [
-    ...takeRounds(pool.filter((round) => round.id === "vivienda-alquiler"), 1, usedFamilies),
-    ...takeRounds(pool.filter((round) => HOUSING_EXTRA.includes(round.id)), 1, usedFamilies),
-  ];
+  const housing = takeRounds(
+    pool.filter((round) => HOUSING_EXTRA.includes(round.id)),
+    1,
+    usedFamilies
+  );
   const bolsillo = takeRounds(
     byLane(
       "bolsillo",
       housing.map((round) => round.id)
     ),
-    4,
+    5,
     usedFamilies
   );
   const derechos = takeRounds(byLane("derechos"), 2, usedFamilies);
@@ -1159,9 +1160,9 @@ function startView() {
   return `
     <p class="kicker">Elecciones generales 2023</p>
     <h1>Con quién coincides</h1>
-    <p class="lead">Nueve preguntas, y cada partida salen otras. Seis van de vivienda, trabajo, impuestos o servicios. Dos, de derechos. Una, de cómo se organiza el país.</p>
+    <p class="lead">Nueve propuestas, y cada partida salen otras. Primero dices si estás a favor, en contra o no lo tienes claro. Después intentas adivinar quién la propuso.</p>
     <section class="panel">
-      <p class="help">En unas eliges la propuesta con la que estás más de acuerdo y después te decimos de qué partido era. En otras lees una frase, dices si estás de acuerdo y solo entonces adivinas quién la propuso.</p>
+      <p class="help">El partido no se ve hasta que hayas respondido las dos cosas. A favor suma 1, en contra resta 1 y si no lo tienes claro suma 0.</p>
       <div class="parties">${pills}</div>
       <button class="primary" data-action="start">Empezar</button>
     </section>
@@ -1184,7 +1185,7 @@ function questionView() {
     </div>
     <div class="track" aria-hidden="true"><span style="width:${width}%"></span></div>
     <p class="kicker">${round.topic}</p>
-    ${round.originLabel ? `<p class="origin">${round.originLabel}</p>` : ""}
+    ${state.phase === "feedback" && round.originLabel ? `<p class="origin">${round.originLabel}</p>` : ""}
     ${body}
     ${feedback}
   `;
@@ -1391,7 +1392,7 @@ function resultView() {
     <h1>${title}</h1>
     <section class="panel">
       <h2>Con qué partido coincides</h2>
-      <p class="help">A favor suma 1. En contra resta 1. Si no lo tienes claro, suma 0. Elegir una propuesta entre varias cuenta como a favor.</p>
+      <p class="help">A favor suma 1. En contra resta 1. Si no lo tienes claro, suma 0.</p>
       <div class="bars">${bars}</div>
     </section>
     <section class="panel">
@@ -1477,7 +1478,7 @@ function prepareRound() {
   if (round.type === "agree") {
     round.options = shuffle(round.options);
   } else {
-    round.choiceOrder = shuffle([round.party, ...round.distractors]);
+    round.choiceOrder = shuffle([round.party, ...round.distractors.slice(0, 2)]);
   }
 }
 
