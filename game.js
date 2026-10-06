@@ -409,6 +409,34 @@ const AGREE = [
     ],
   },
   {
+    id: "inmigra-medidas",
+    type: "agree",
+    topic: "Inmigración",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "vox",
+        text: "Expulsar también a inmigrantes con residencia legal que cometan delitos graves o hagan de los delitos leves su forma de vida.",
+        note: "Es la medida 203 de Vox, aparte de la expulsión de quien entra sin papeles. Añade procurar que esas penas se cumplan en el país de origen.",
+      },
+      {
+        party: "vox",
+        text: "Dar prioridad migratoria a personas de países que comparten idioma y vínculos históricos y culturales con España.",
+        note: "Es la medida 208 de Vox. No trata todas las procedencias igual.",
+      },
+      {
+        party: "erc",
+        text: "Desligar de la nacionalidad el derecho a votar y a presentarse, vincularlo a residir y estar empadronado, y cambiar el artículo 13 de la Constitución.",
+        note: "ERC no dice si son las municipales, las autonómicas o las generales. El artículo 13 es el que hoy deja el voto de los extranjeros, como mucho, en las municipales y solo si hay reciprocidad.",
+      },
+      {
+        party: "psoe-junts",
+        text: "Que Cataluña gestione autorizaciones de estancia y otras competencias estatales de inmigración, aplicando la normativa del Estado.",
+        note: "La presentaron juntos el Grupo Socialista y Junts. No significa que Cataluña decida sola toda la política migratoria. No es una ley aprobada.",
+      },
+    ],
+  },
+  {
     id: "ocupacion",
     family: "ocupacion",
     type: "agree",
@@ -453,6 +481,7 @@ const AGREE = [
       {
         party: "pp",
         text: "Aprobar una ley de derechos de las personas transexuales, pactada con diálogo, y legislar con prudencia frente a las posiciones más extremas.",
+        note: "Es la medida 211 del programa del PP. Esta frase, por sí sola, no dice que apoye la autodeterminación del sexo en el registro ni el contenido de la ley vigente.",
       },
     ],
   },
@@ -485,7 +514,7 @@ const AGREE = [
 const GUESS = [
   {
     id: "iva",
-    type: "stance",
+    type: "guess",
     topic: "IVA de la comida",
     text: "Bajar un tiempo el IVA de la carne, el pescado y las conservas.",
     party: "pp",
@@ -494,7 +523,7 @@ const GUESS = [
   },
   {
     id: "autonomos",
-    type: "stance",
+    type: "guess",
     topic: "Cuota de autónomos",
     text: "Tarifa 0 el primer año para quien se haga autónomo, y poder dejar sin pagar tres cuotas al año.",
     party: "pp",
@@ -503,7 +532,7 @@ const GUESS = [
   },
   {
     id: "transporte",
-    type: "stance",
+    type: "guess",
     topic: "Transporte",
     text: "Transporte público urbano gratis para niños y estudiantes hasta los 24 años.",
     party: "psoe",
@@ -512,7 +541,7 @@ const GUESS = [
   },
   {
     id: "sanidad-listas",
-    type: "stance",
+    type: "guess",
     topic: "Listas de espera",
     text: "Bajar las listas de espera incentivando a los hospitales públicos y reforzando los conciertos con la sanidad privada.",
     party: "vox",
@@ -521,7 +550,7 @@ const GUESS = [
   },
   {
     id: "violencia",
-    type: "stance",
+    type: "guess",
     topic: "Violencia de género",
     text: "Derogar la Ley Integral de Violencia de Género.",
     party: "vox",
@@ -530,7 +559,7 @@ const GUESS = [
   },
   {
     id: "deficit",
-    type: "stance",
+    type: "guess",
     topic: "Dinero y Catalunya",
     text: "Cada año salen de Catalunya unos 20.200 millones que se pagan al Estado y no vuelven. Hay que acabar con ese déficit fiscal.",
     party: "junts",
@@ -540,7 +569,7 @@ const GUESS = [
   {
     id: "vientres",
     family: "abolicion",
-    type: "stance",
+    type: "guess",
     topic: "Derechos",
     text: "Ni prostitución ni vientres de alquiler: abolir la prostitución y prohibir la gestación por sustitución.",
     party: "psoe",
@@ -549,7 +578,7 @@ const GUESS = [
   },
   {
     id: "cannabis",
-    type: "stance",
+    type: "guess",
     topic: "Cannabis",
     text: "Despenalizar la producción y el consumo propio de cannabis sin ánimo de lucro, y regular las asociaciones de autoconsumo.",
     party: "sumar",
@@ -558,7 +587,7 @@ const GUESS = [
   },
   {
     id: "toros",
-    type: "stance",
+    type: "guess",
     topic: "Toros",
     text: "Quitar la ley que protege los toros como cultura y dejar de pagar con dinero público las corridas en las que muere el animal.",
     party: "sumar",
@@ -567,7 +596,7 @@ const GUESS = [
   },
   {
     id: "herencia",
-    type: "stance",
+    type: "guess",
     topic: "Juventud",
     text: "Dar 20.000 euros a cada persona al cumplir 23 años, pagados con un impuesto a las grandes fortunas.",
     party: "sumar",
@@ -576,7 +605,7 @@ const GUESS = [
   },
   {
     id: "bono",
-    type: "stance",
+    type: "guess",
     topic: "Luz y gas",
     text: "Crear un bono social único: un pago directo que sustituya las ayudas actuales de la luz y del gas.",
     party: "pp",
@@ -585,7 +614,7 @@ const GUESS = [
   },
   {
     id: "anticonceptivos",
-    type: "stance",
+    type: "guess",
     topic: "Salud",
     text: "Preservativos y anticonceptivos gratis para la gente joven, en sitios a los que va la juventud.",
     party: "psoe",
@@ -594,7 +623,7 @@ const GUESS = [
   },
   {
     id: "monarquia",
-    type: "stance",
+    type: "guess",
     topic: "Monarquía",
     text: "Abolir la monarquía y apoyar un referéndum para elegir entre monarquía y república.",
     party: "erc",
@@ -603,7 +632,7 @@ const GUESS = [
   },
   {
     id: "aeropuertos",
-    type: "stance",
+    type: "guess",
     topic: "Aeropuertos",
     text: "Que Catalunya gestione los aeropuertos de El Prat, Girona, Reus y Sabadell.",
     party: "junts",
@@ -612,7 +641,7 @@ const GUESS = [
   },
   {
     id: "menas",
-    type: "stance",
+    type: "guess",
     topic: "Menores migrantes",
     text: "Cerrar los centros de menores extranjeros no acompañados y devolver a esos menores con su familia, a su país.",
     party: "vox",
@@ -622,7 +651,7 @@ const GUESS = [
   {
     id: "jornada-sumar",
     family: "jornada",
-    type: "stance",
+    type: "guess",
     topic: "Jornada laboral",
     text: "Bajar por ley la jornada máxima a 37,5 horas sin bajar el sueldo, y seguir después hacia las 32 horas semanales.",
     party: "sumar",
@@ -632,7 +661,7 @@ const GUESS = [
   {
     id: "avales",
     family: "hipoteca",
-    type: "stance",
+    type: "guess",
     topic: "Hipotecas jóvenes",
     text: "Avalar hipotecas de hasta el 95% del precio de la vivienda para jóvenes de hasta 35 años.",
     party: "pp",
@@ -641,7 +670,7 @@ const GUESS = [
   },
   {
     id: "selectividad",
-    type: "stance",
+    type: "guess",
     topic: "Universidad",
     text: "Una prueba de acceso a la universidad igual en toda España, también en cómo se corrige.",
     party: "pp",
@@ -651,7 +680,7 @@ const GUESS = [
   {
     id: "desalojo-24",
     family: "ocupacion",
-    type: "stance",
+    type: "guess",
     topic: "Ocupación",
     text: "Desalojar como máximo en 24 horas desde el requerimiento, si quien ocupa no acredita un título para quedarse.",
     party: "pp",
@@ -660,7 +689,7 @@ const GUESS = [
   },
   {
     id: "creditos",
-    type: "stance",
+    type: "guess",
     topic: "Universidad",
     text: "Si apruebas una asignatura a la primera, esos créditos de universidad o de FP superior son gratis al curso siguiente.",
     party: "psoe",
@@ -670,20 +699,16 @@ const GUESS = [
   {
     id: "proxenetismo",
     family: "abolicion",
-    type: "stance",
+    type: "guess",
     topic: "Prostitución",
-    text: "¿Prohibirías el proxenetismo en todas sus formas como parte de una política para abolir la prostitución?",
+    text: "Prohibir el proxenetismo en todas sus formas, dentro de una política para abolir la prostitución.",
     party: "psoe",
     why: "El PSOE se declara abolicionista. Propone una ley contra el proxenetismo en todas sus formas, con castigo de la tercería locativa y sanción a los proxenetas, y también protección y una salida para las víctimas.",
-    source: {
-      label: "Programa del PSOE, 2023, p. 158",
-      href: "https://www.rtve.es/contenidos/documentos/elecciones_generales_2023/programa_electoral_psoe.pdf#page=158",
-    },
-    distractors: ["pp", "vox"],
+    distractors: ["pp", "vox", "sumar"],
   },
   {
     id: "referendum-int",
-    type: "stance",
+    type: "guess",
     topic: "Catalunya",
     text: "Negociar un referéndum de autodeterminación en Catalunya, con acompañamiento internacional.",
     party: "erc",
@@ -692,7 +717,7 @@ const GUESS = [
   },
   {
     id: "injurias",
-    type: "stance",
+    type: "guess",
     topic: "Monarquía",
     text: "Quitar del código penal el delito de injurias a la Corona.",
     party: "erc",
@@ -701,7 +726,7 @@ const GUESS = [
   },
   {
     id: "sociedades",
-    type: "stance",
+    type: "guess",
     topic: "Impuesto de sociedades",
     text: "Bajar del 25% al 20% el tipo nominal del impuesto de sociedades para las pymes.",
     party: "junts",
@@ -710,21 +735,17 @@ const GUESS = [
   },
   {
     id: "peaje",
-    type: "stance",
+    type: "guess",
     topic: "Carreteras",
-    text: "¿Introducirías el pago por uso en las carreteras de alta capacidad cuya gestión se transfiriera a Cataluña?",
+    text: "Si Cataluña gestiona las carreteras de alta capacidad, cobrar por usarlas para pagar la mejora, el mantenimiento y la seguridad.",
     party: "junts",
-    why: "Junts lo propone en el punto 6 de carreteras: si se traspasa la gestión, un pago por uso en la red de alta capacidad para financiar la mejora, el mantenimiento y la seguridad.",
-    source: {
-      label: "Programa de Junts, 2023, p. 41",
-      href: "https://www.rtve.es/contenidos/documentos/elecciones_generales_2023/programa_electoral_junts.pdf#page=41",
-    },
-    distractors: ["erc", "psoe"],
+    why: "Junts lo propone en el punto 6 de carreteras: si se traspasa la gestión, un pago por uso en la red de alta capacidad.",
+    distractors: ["erc", "psoe", "pp"],
   },
   {
     id: "sucesiones-ley",
     family: "sucesiones",
-    type: "stance",
+    type: "guess",
     topic: "Herencias",
     originLabel: "Proposición de ley de Vox. BOCG, 12 de enero de 2024. No es una ley aprobada.",
     text: "Suprimir el impuesto sobre sucesiones y donaciones.",
@@ -735,7 +756,7 @@ const GUESS = [
   {
     id: "nuclear-ley",
     family: "nuclear",
-    type: "stance",
+    type: "guess",
     topic: "Energía nuclear",
     originLabel: "Proposición de ley del PP. BOCG, 11 de abril de 2025. No es una ley aprobada.",
     text: "Prorrogar las centrales nucleares si cumplen las condiciones de seguridad, y que el plan energético no cuente con cerrarlas.",
@@ -746,7 +767,7 @@ const GUESS = [
   {
     id: "temporada-causa",
     family: "temporada",
-    type: "stance",
+    type: "guess",
     topic: "Alquiler temporal",
     originLabel: "Proposición de ley conjunta. BOCG, 5 de julio de 2024. No es una ley aprobada.",
     prompt: "¿Quién la presentó?",
@@ -758,7 +779,7 @@ const GUESS = [
   {
     id: "temporada-plazo",
     family: "temporada",
-    type: "stance",
+    type: "guess",
     topic: "Alquiler temporal",
     originLabel: "Proposición de ley conjunta. BOCG, 5 de julio de 2024. No es una ley aprobada.",
     prompt: "¿Quién la presentó?",
@@ -768,137 +789,42 @@ const GUESS = [
     distractors: ["psoe", "pp", "vox"],
   },
   {
-    id: "impuesto-no-ue",
-    type: "stance",
-    topic: "Compra de vivienda",
-    text: "¿Cobrarías un impuesto del 100 % sobre la base imponible por comprar un inmueble en España a quienes no residan en la UE?",
-    party: "psoe",
-    why: "El Grupo Socialista crea ese impuesto en el artículo 4. El tipo es el 100 % de la base imponible y se puede descontar el impuesto de transmisiones ya pagado. El criterio es residir fuera de la UE, no simplemente ser extranjero. No es una ley aprobada.",
-    source: {
-      label: "Proposición del PSOE, BOCG B-229-1, 30 de mayo de 2025, artículo 4",
-      href: "https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-229-1.PDF",
-    },
-    distractors: ["pp", "vox"],
-  },
-  {
-    id: "inmigra-cat",
-    type: "stance",
-    topic: "Inmigración",
-    text: "¿Debería Cataluña gestionar autorizaciones de estancia y otras competencias estatales de inmigración?",
-    party: "psoe-junts",
-    why: "La presentaron juntos el Grupo Socialista y Junts. Delegan competencias concretas, como las autorizaciones de estancia, y la ejecución sigue la normativa del Estado. No significa que Cataluña decida sola toda la política migratoria. No es una ley aprobada.",
-    source: {
-      label: "Proposición 122/000172, BOCG B-195-1, 14 de marzo de 2025, artículos 1 y 2",
-      href: "https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-195-1.PDF",
-    },
-    distractors: ["erc", "pp"],
-  },
-  {
-    id: "voto-residencia",
-    type: "stance",
-    topic: "Derecho a votar",
-    text: "¿Desligarías de la nacionalidad el derecho a votar y a presentarse, lo vincularías a residir y estar empadronado, y cambiarías para eso el artículo 13 de la Constitución?",
-    party: "erc",
-    why: "ERC no dice si son las municipales, las autonómicas o las generales. Pide el voto activo y pasivo ligado al empadronamiento y no a la nacionalidad, y cambiar el artículo 13 de la Constitución. Ese artículo es el que hoy deja el voto de los extranjeros, como mucho, en las municipales y solo si hay reciprocidad.",
-    source: {
-      label: "Programa de ERC, 2023, p. 42, «Derecho al voto y participación política»",
-      href: "https://www.rtve.es/contenidos/documentos/elecciones_generales_2023/programa_electoral_erc.pdf#page=42",
-    },
-    distractors: ["sumar", "psoe"],
-  },
-  {
-    id: "expulsion-legal",
-    type: "stance",
-    topic: "Inmigración",
-    text: "¿Expulsarías también a inmigrantes con residencia legal que cometan delitos graves o hagan de los delitos leves su forma de vida?",
-    party: "vox",
-    why: "Es la medida 203 de Vox. Va aparte de la expulsión de quien entra de forma irregular. Añade procurar que esas penas se cumplan en el país de origen.",
-    source: {
-      label: "Programa de Vox, 2023, medida 203, p. 100",
-      href: "https://www.rtve.es/contenidos/documentos/elecciones_generales_2023/programa_electoral_vox.pdf#page=100",
-    },
-    distractors: ["pp", "psoe"],
-  },
-  {
-    id: "prioridad-ibero",
-    type: "stance",
-    topic: "Inmigración",
-    text: "¿Darías prioridad migratoria a personas de países que comparten idioma y vínculos históricos y culturales con España?",
-    party: "vox",
-    why: "Es la medida 208 de Vox. No trata todas las procedencias igual: da prioridad a quienes vienen de países con ese idioma y esos lazos.",
-    source: {
-      label: "Programa de Vox, 2023, medida 208, p. 101",
-      href: "https://www.rtve.es/contenidos/documentos/elecciones_generales_2023/programa_electoral_vox.pdf#page=101",
-    },
-    distractors: ["pp", "psoe"],
-  },
-  {
     id: "otan",
-    type: "stance",
+    type: "guess",
     topic: "OTAN",
-    text: "¿Prepararías planes para que España pueda salir de la OTAN?",
+    text: "Preparar planes de contingencia para que España pueda salir de la OTAN.",
     party: "sumar",
     why: "Lo pide el Grupo Parlamentario Sumar, no cada formación de la coalición. El punto 7 habla de planes de contingencia para una salida, no de irse de un día para otro. Es una proposición no de ley: no obliga al Gobierno y no es una ley.",
-    source: {
-      label: "PNL 161/002257, BOCG D-358, 17 de junio de 2025, punto 7",
-      href: "https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-358.PDF",
-    },
-    distractors: ["psoe", "pp"],
+    distractors: ["psoe", "pp", "vox"],
   },
   {
     id: "anonimato",
     family: "expresion",
-    type: "stance",
+    type: "guess",
     topic: "Redes sociales",
-    text: "¿Debería protegerse el anonimato en redes cuando se utiliza para expresarse legalmente?",
+    text: "Proteger el anonimato en redes cuando se usa para expresarse dentro de la Constitución y del Código Penal.",
     party: "vox",
-    why: "Es el punto 8 de una proposición no de ley de Vox. El anonimato que pide tiene límite: la Constitución y el Código Penal. Una proposición no de ley no obliga al Gobierno.",
-    source: {
-      label: "PNL 161/002223, BOCG D-358, 17 de junio de 2025, punto 8",
-      href: "https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-358.PDF",
-    },
-    distractors: ["pp", "sumar"],
+    why: "Es el punto 8 de una proposición no de ley de Vox. El anonimato que pide tiene ese límite. Una proposición no de ley no obliga al Gobierno.",
+    distractors: ["pp", "sumar", "psoe"],
   },
   {
     id: "odio",
     family: "expresion",
-    type: "stance",
+    type: "guess",
     topic: "Delito de odio",
-    text: "¿Limitarías el delito de odio a la inducción o apología de conductas dirigidas a cometer actos criminales?",
+    text: "Limitar el delito de odio a la inducción o la apología de actos criminales, cambiando el artículo 510 del Código Penal.",
     party: "vox",
-    why: "Es el punto 9 de la misma proposición no de ley. Pide cambiar por completo el artículo 510 del Código Penal. No es borrar todos los delitos relacionados con lo que se dice. Una proposición no de ley no obliga al Gobierno.",
-    source: {
-      label: "PNL 161/002223, BOCG D-358, 17 de junio de 2025, punto 9",
-      href: "https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-358.PDF",
-    },
-    distractors: ["pp", "psoe"],
-  },
-  {
-    id: "trans-pp",
-    family: "lgtbi",
-    type: "stance",
-    topic: "Personas trans",
-    text: "¿Impulsarías una nueva ley para garantizar los derechos de las personas trans, mediante un acuerdo con sectores sociales y profesionales?",
-    party: "pp",
-    why: "Es la medida 211 del programa del PP: una ley nueva, nacida del diálogo con los sectores sociales y profesionales. Esta frase, por sí sola, no dice que apoye la autodeterminación del sexo en el registro ni el contenido de la ley vigente.",
-    source: {
-      label: "Programa del PP, 2023, medida 211, p. 64",
-      href: "https://www.rtve.es/contenidos/documentos/elecciones_generales_2023/programa_electoral_pp.pdf#page=64",
-    },
-    distractors: ["psoe", "vox"],
+    why: "Es el punto 9 de la misma proposición no de ley. No es borrar todos los delitos relacionados con lo que se dice. Una proposición no de ley no obliga al Gobierno.",
+    distractors: ["pp", "psoe", "sumar"],
   },
   {
     id: "ilegalizar",
-    type: "stance",
+    type: "guess",
     topic: "Partidos",
-    text: "¿Consultarías a los españoles sobre ilegalizar los partidos independentistas y promoverías esa ilegalización?",
+    text: "Consultar a los españoles sobre ilegalizar los partidos independentistas, y promover esa ilegalización.",
     party: "vox",
     why: "Es la medida 21 de Vox. Primero, una consulta por el artículo 92 de la Constitución. Después, quitar subvenciones e ilegalizar partidos, asociaciones y ONG que persigan destruir la unidad territorial y la soberanía nacional.",
-    source: {
-      label: "Programa de Vox, 2023, medida 21, p. 16",
-      href: "https://www.rtve.es/contenidos/documentos/elecciones_generales_2023/programa_electoral_vox.pdf#page=16",
-    },
-    distractors: ["pp", "psoe"],
+    distractors: ["pp", "psoe", "erc"],
   },
 ];
 
@@ -907,7 +833,7 @@ const AGREE_CONGRESO = [
     id: "vivienda-congreso",
     type: "agree",
     topic: "Vivienda en el Congreso",
-    originLabel: "Proposiciones de ley del Congreso, XV legislatura. Ninguna de estas tres es una ley ya aprobada.",
+    originLabel: "Proposiciones de ley del Congreso, XV legislatura. Ninguna de estas es una ley ya aprobada.",
     prompt: "¿Con cuál estás más de acuerdo?",
     options: [
       {
@@ -915,6 +841,12 @@ const AGREE_CONGRESO = [
         text: "Poner el IVA del 21% a los alquileres de corta duración en municipios de más de 10.000 habitantes.",
         cite: "PSOE · BOCG 30 may 2025",
         note: "Proposición de ley del Grupo Socialista, publicada el 30 de mayo de 2025. No es una ley aprobada.",
+      },
+      {
+        party: "psoe",
+        text: "Un impuesto del 100 % de la base imponible para quien compre un inmueble en España sin residir en la UE, pudiendo descontar el impuesto de transmisiones ya pagado.",
+        cite: "PSOE · BOCG 30 may 2025",
+        note: "Está en el artículo 4 de la misma proposición. El criterio es residir fuera de la UE, no simplemente ser extranjero. No es una ley aprobada.",
       },
       {
         party: "pp",
@@ -935,7 +867,7 @@ const AGREE_CONGRESO = [
 const GUESS_CONGRESO = [
   {
     id: "ceuta-ayudas",
-    type: "stance",
+    type: "guess",
     topic: "Ceuta",
     originLabel: "Proyecto de ley publicado en el BOCG el 25 de septiembre de 2026.",
     text: "En Ceuta, 5.000 euros a cada autónomo y entre 10.000 y 150.000 euros a las empresas, según su facturación, por la crisis migratoria de julio de 2026.",
@@ -945,7 +877,7 @@ const GUESS_CONGRESO = [
   },
   {
     id: "ceuta-cuotas",
-    type: "stance",
+    type: "guess",
     topic: "Ceuta y Melilla",
     originLabel: "Proposición de ley publicada en el BOCG el 25 de octubre de 2024.",
     text: "Recuperar la bonificación de las cuotas de la Seguridad Social que pagan los empresarios de Ceuta y Melilla.",
@@ -1024,14 +956,9 @@ const LANES = {
   injurias: "derechos",
   "referendum-int": "territorial",
   peaje: "territorial",
-  "impuesto-no-ue": "bolsillo",
-  "expulsion-legal": "bolsillo",
-  "prioridad-ibero": "bolsillo",
-  "voto-residencia": "derechos",
+  "inmigra-medidas": "bolsillo",
   anonimato: "derechos",
   odio: "derechos",
-  "trans-pp": "derechos",
-  "inmigra-cat": "territorial",
   otan: "territorial",
   ilegalizar: "territorial",
   lgtbi: "derechos",
@@ -1048,7 +975,7 @@ const LANES = {
   aeropuertos: "territorial",
 };
 
-const HOUSING_EXTRA = ["temporada-causa", "temporada-plazo", "avales", "desalojo-24", "impuesto-no-ue"];
+const HOUSING_EXTRA = ["vivienda-compra", "turisticos", "vivienda-congreso", "temporada-causa", "temporada-plazo", "avales", "desalojo-24"];
 
 function allRounds() {
   return [...AGREE, ...GUESS, ...AGREE_CONGRESO, ...GUESS_CONGRESO].map((round) => ({
@@ -1076,20 +1003,19 @@ function takeRounds(pool, count, usedFamilies) {
 }
 
 function freshGame() {
-  const pool = allRounds().filter((round) => round.type === "stance");
+  const pool = allRounds();
   const usedFamilies = new Set();
   const byLane = (lane, skip = []) => pool.filter((round) => round.lane === lane && !skip.includes(round.id));
-  const housing = takeRounds(
-    pool.filter((round) => HOUSING_EXTRA.includes(round.id)),
-    1,
-    usedFamilies
-  );
+  const housing = [
+    ...takeRounds(pool.filter((round) => round.id === "vivienda-alquiler"), 1, usedFamilies),
+    ...takeRounds(pool.filter((round) => HOUSING_EXTRA.includes(round.id)), 1, usedFamilies),
+  ];
   const bolsillo = takeRounds(
     byLane(
       "bolsillo",
       housing.map((round) => round.id)
     ),
-    5,
+    4,
     usedFamilies
   );
   const derechos = takeRounds(byLane("derechos"), 2, usedFamilies);
@@ -1103,7 +1029,6 @@ function freshGame() {
     agrees: Object.fromEntries(Object.keys(PARTIES).map((id) => [id, 0])),
     guesses: [],
     picked: null,
-    stance: null,
   };
 }
 
@@ -1160,9 +1085,9 @@ function startView() {
   return `
     <p class="kicker">Elecciones generales 2023</p>
     <h1>Con quién coincides</h1>
-    <p class="lead">Nueve propuestas, y cada partida salen otras. Primero dices si estás a favor, en contra o no lo tienes claro. Después intentas adivinar quién la propuso.</p>
+    <p class="lead">Nueve preguntas, y cada partida salen otras. Seis van de vivienda, trabajo, impuestos o servicios. Dos, de derechos. Una, de cómo se organiza el país.</p>
     <section class="panel">
-      <p class="help">El partido no se ve hasta que hayas respondido las dos cosas. A favor suma 1, en contra resta 1 y si no lo tienes claro suma 0.</p>
+      <p class="help">En unas eliges la propuesta que más te gusta y después te decimos de qué partido era. En otras te damos una frase y adivinas el partido.</p>
       <div class="parties">${pills}</div>
       <button class="primary" data-action="start">Empezar</button>
     </section>
@@ -1174,9 +1099,9 @@ function questionView() {
   const round = state.rounds[state.index];
   const total = state.rounds.length;
   const width = ((state.index + (state.phase === "feedback" ? 1 : 0)) / total) * 100;
-  const body = round.type === "agree" ? agreeBody(round) : round.type === "stance" ? stanceBody(round) : guessBody(round);
+  const body = round.type === "agree" ? agreeBody(round) : guessBody(round);
   const feedback = state.phase === "feedback" ? feedbackView(round) : "";
-  const mode = round.type === "agree" ? "Elige" : round.type === "stance" && state.phase === "question" ? "Opinas" : "Adivina";
+  const mode = round.type === "agree" ? "Elige" : "Adivina";
 
   return `
     <div class="topbar">
@@ -1185,7 +1110,7 @@ function questionView() {
     </div>
     <div class="track" aria-hidden="true"><span style="width:${width}%"></span></div>
     <p class="kicker">${round.topic}</p>
-    ${state.phase === "feedback" && round.originLabel ? `<p class="origin">${round.originLabel}</p>` : ""}
+    ${round.originLabel ? `<p class="origin">${round.originLabel}</p>` : ""}
     ${body}
     ${feedback}
   `;
@@ -1243,56 +1168,6 @@ function guessBody(round) {
   `;
 }
 
-const STANCE_LABEL = {
-  agree: "De acuerdo",
-  disagree: "En desacuerdo",
-  unsure: "No lo tengo claro",
-};
-
-function partyButtons(round) {
-  return round.choiceOrder
-    .map((id) => {
-      const classes = ["choice"];
-      if (state.phase === "feedback") {
-        if (id === state.picked) classes.push("picked");
-        if (id !== state.picked) classes.push("dim");
-      }
-      const logos = coalitionMembers(id) ? partyMark(id) : "";
-      return `
-        <button class="${classes.join(" ")}" data-party="${id}" ${state.phase === "feedback" ? "disabled" : ""}>
-          ${logos}
-          <p>${partyLabel(id)}</p>
-        </button>`;
-    })
-    .join("");
-}
-
-function stanceBody(round) {
-  const quote = `<p class="quote">“${round.text}”</p>`;
-  if (state.phase === "question") {
-    const buttons = Object.entries(STANCE_LABEL)
-      .map(
-        ([id, label]) => `
-        <button class="choice" data-stance="${id}">
-          <p>${label}</p>
-        </button>`
-      )
-      .join("");
-    return `
-      ${quote}
-      <h2>¿Estás de acuerdo con esta propuesta?</h2>
-      <div class="choices">${buttons}</div>
-    `;
-  }
-
-  return `
-    ${quote}
-    <p class="origin">Tu respuesta: ${STANCE_LABEL[state.stance]}.</p>
-    <h2>¿Quién crees que la propuso?</h2>
-    <div class="choices">${partyButtons(round)}</div>
-  `;
-}
-
 function feedbackView(round) {
   if (round.type === "agree") {
     const chosen = round.options[state.picked];
@@ -1315,23 +1190,10 @@ function feedbackView(round) {
 
   const correct = state.picked === round.party;
   const party = PARTIES[round.party];
-  const stanceLine =
-    round.type === "stance"
-      ? {
-          agree: "Has dicho que estás de acuerdo.",
-          disagree: "Has dicho que no estás de acuerdo.",
-          unsure: "No lo tenías claro.",
-        }[state.stance]
-      : "";
-  const source = round.source
-    ? `<p><a class="source-link" href="${round.source.href}" target="_blank" rel="noopener">${round.source.label}</a></p>`
-    : "";
   return `
     <section class="feedback ${correct ? "ok" : "no"}">
-      <h3>${correct ? `Sí: la propuso ${party.name}` : `La propuso ${party.name}`}</h3>
-      ${stanceLine ? `<p>${stanceLine} ${correct ? "Acertaste el autor." : `Elegiste ${partyLabel(state.picked)}.`}</p>` : ""}
+      <h3>${correct ? `Sí: es de ${party.name}` : `Era de ${party.name}`}</h3>
       <p>${round.why}</p>
-      ${source}
       <p class="others">${party.blurb}</p>
     </section>
     <div class="actions">
@@ -1392,7 +1254,7 @@ function resultView() {
     <h1>${title}</h1>
     <section class="panel">
       <h2>Con qué partido coincides</h2>
-      <p class="help">A favor suma 1. En contra resta 1. Si no lo tienes claro, suma 0.</p>
+      <p class="help">Cada propuesta que eliges suma 1 al partido que la hizo.</p>
       <div class="bars">${bars}</div>
     </section>
     <section class="panel">
@@ -1420,7 +1282,6 @@ function bind() {
     } else {
       state.index += 1;
       state.picked = null;
-      state.stance = null;
       prepareRound();
       state.phase = "question";
     }
@@ -1443,24 +1304,10 @@ function bind() {
     });
   });
 
-  app.querySelectorAll("[data-stance]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const round = state.rounds[state.index];
-      state.stance = button.dataset.stance;
-      round.stance = state.stance;
-      state.phase = "who";
-      render();
-    });
-  });
-
   app.querySelectorAll("[data-party]").forEach((button) => {
     button.addEventListener("click", () => {
       const round = state.rounds[state.index];
       state.picked = button.dataset.party;
-      if (round.type === "stance") {
-        const delta = state.stance === "agree" ? 1 : state.stance === "disagree" ? -1 : 0;
-        state.agrees[round.party] += delta;
-      }
       state.guesses.push({
         topic: round.topic,
         party: round.party,
@@ -1478,7 +1325,7 @@ function prepareRound() {
   if (round.type === "agree") {
     round.options = shuffle(round.options);
   } else {
-    round.choiceOrder = shuffle([round.party, ...round.distractors.slice(0, 2)]);
+    round.choiceOrder = shuffle([round.party, ...round.distractors]);
   }
 }
 
