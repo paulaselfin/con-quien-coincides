@@ -41,6 +41,12 @@ const PARTIES = {
     blurb: "PSOE y Sumar están juntos en el Gobierno. Si la propuesta la envía el Gobierno, aquí cuenta como PSOE+Sumar.",
     color: "#c13a52",
   },
+  "grupos-alquiler": {
+    name: "Sumar, EH Bildu, ERC, Podemos y BNG",
+    hint: "proposición conjunta",
+    blurb: "La firman Sumar, Euskal Herria Bildu, ERC y el Grupo Mixto. En el texto, el Mixto son Podemos y el BNG.",
+    color: "#8a3d62",
+  },
 };
 
 const AGREE = [
@@ -70,6 +76,7 @@ const AGREE = [
   },
   {
     id: "vivienda-compra",
+    family: "hipoteca",
     type: "agree",
     topic: "Conseguir casa",
     prompt: "¿Con cuál estás más de acuerdo?",
@@ -116,6 +123,7 @@ const AGREE = [
   },
   {
     id: "nuclear",
+    family: "nuclear",
     type: "agree",
     topic: "Energía nuclear",
     prompt: "¿Con cuál estás más de acuerdo?",
@@ -156,6 +164,7 @@ const AGREE = [
   },
   {
     id: "sucesiones",
+    family: "sucesiones",
     type: "agree",
     topic: "Herencias",
     prompt: "¿Con cuál estás más de acuerdo?",
@@ -314,7 +323,7 @@ const AGREE = [
     options: [
       {
         party: "erc",
-        text: "Negociar un referéndum para que Catalunya pueda decidir si se convierte en una república independiente.",
+        text: "Negociar un referéndum de autodeterminación en Catalunya, con acompañamiento internacional.",
         note: "Junts también defiende que Catalunya decida. Esta frase está en el programa de ERC.",
       },
       {
@@ -354,6 +363,7 @@ const AGREE = [
   },
   {
     id: "jornada",
+    family: "jornada",
     type: "agree",
     topic: "Jornada laboral",
     prompt: "¿Con cuál estás más de acuerdo?",
@@ -394,6 +404,7 @@ const AGREE = [
   },
   {
     id: "ocupacion",
+    family: "ocupacion",
     type: "agree",
     topic: "Ocupación",
     prompt: "¿Con cuál estás más de acuerdo?",
@@ -521,6 +532,7 @@ const GUESS = [
   },
   {
     id: "vientres",
+    family: "abolicion",
     type: "guess",
     topic: "Derechos",
     text: "Ni prostitución ni vientres de alquiler: abolir la prostitución y prohibir la gestación por sustitución.",
@@ -532,7 +544,7 @@ const GUESS = [
     id: "cannabis",
     type: "guess",
     topic: "Cannabis",
-    text: "Regular el cannabis por completo: despenalizar el autoconsumo sin ánimo de lucro y permitir el uso medicinal.",
+    text: "Despenalizar la producción y el consumo propio de cannabis sin ánimo de lucro, y regular las asociaciones de autoconsumo.",
     party: "sumar",
     why: "Sumar propone regular el cannabis y las asociaciones de autoconsumo. No es una medida del resto de programas de esta lista.",
     distractors: ["psoe", "erc", "vox"],
@@ -599,6 +611,146 @@ const GUESS = [
     party: "vox",
     why: "Vox lo propone así: cerrar esos centros y repatriar a los menores con sus padres.",
     distractors: ["pp", "psoe", "sumar"],
+  },
+  {
+    id: "jornada-sumar",
+    family: "jornada",
+    type: "guess",
+    topic: "Jornada laboral",
+    text: "Bajar por ley la jornada máxima a 37,5 horas sin bajar el sueldo, y seguir después hacia las 32 horas semanales.",
+    party: "sumar",
+    why: "El programa de Sumar lo pone así: en 2024, una jornada máxima de 37,5 horas por ley, sin bajar el sueldo, y un diálogo para llegar a las 32. El PSOE habla de un proyecto piloto, no de esa ley.",
+    distractors: ["psoe", "pp", "vox"],
+  },
+  {
+    id: "avales",
+    family: "hipoteca",
+    type: "guess",
+    topic: "Hipotecas jóvenes",
+    text: "Avalar hipotecas de hasta el 95% del precio de la vivienda para jóvenes de hasta 35 años.",
+    party: "pp",
+    why: "Es la medida 91 del programa del PP: un programa de avales para que el banco financie hasta el 95% del precio.",
+    distractors: ["psoe", "sumar", "vox"],
+  },
+  {
+    id: "selectividad",
+    type: "guess",
+    topic: "Universidad",
+    text: "Una prueba de acceso a la universidad igual en toda España, también en cómo se corrige.",
+    party: "pp",
+    why: "El PP la llama EBAU común. Las condiciones básicas, incluida la evaluación, las fijaría el Gobierno tras consultar a las comunidades.",
+    distractors: ["psoe", "sumar", "vox"],
+  },
+  {
+    id: "desalojo-24",
+    family: "ocupacion",
+    type: "guess",
+    topic: "Ocupación",
+    text: "Desalojar como máximo en 24 horas desde el requerimiento, si quien ocupa no acredita un título para quedarse.",
+    party: "pp",
+    why: "Es la medida 281 del programa del PP. Vox también pide mano dura con la ocupación, pero este plazo de 24 horas desde el requerimiento es del PP.",
+    distractors: ["vox", "psoe", "sumar"],
+  },
+  {
+    id: "creditos",
+    type: "guess",
+    topic: "Universidad",
+    text: "Si apruebas una asignatura a la primera, esos créditos de universidad o de FP superior son gratis al curso siguiente.",
+    party: "psoe",
+    why: "El PSOE lo escribe así: crédito aprobado a la primera, crédito gratuito en el curso siguiente, en la universidad y en la FP superior.",
+    distractors: ["sumar", "pp", "vox"],
+  },
+  {
+    id: "proxenetismo",
+    family: "abolicion",
+    type: "guess",
+    topic: "Prostitución",
+    text: "Una ley para prohibir el proxenetismo en todas sus formas, dentro de una política de abolición de la prostitución.",
+    party: "psoe",
+    why: "El PSOE dice que impulsó esa norma porque la ley del solo sí es sí dejó fuera la prostitución y la explotación sexual.",
+    distractors: ["sumar", "pp", "vox"],
+  },
+  {
+    id: "referendum-int",
+    type: "guess",
+    topic: "Catalunya",
+    text: "Negociar un referéndum de autodeterminación en Catalunya, con acompañamiento internacional.",
+    party: "erc",
+    why: "ERC lo escribe así en el apartado de propuestas para el Congreso y el Senado. Junts también defiende que Catalunya decida, pero esta frase del acompañamiento internacional es de ERC.",
+    distractors: ["junts", "psoe", "pp"],
+  },
+  {
+    id: "injurias",
+    type: "guess",
+    topic: "Monarquía",
+    text: "Quitar del código penal el delito de injurias a la Corona.",
+    party: "erc",
+    why: "ERC lo propone así: despenalizar las injurias a la Corona.",
+    distractors: ["junts", "sumar", "pp"],
+  },
+  {
+    id: "sociedades",
+    type: "guess",
+    topic: "Impuesto de sociedades",
+    text: "Bajar del 25% al 20% el tipo nominal del impuesto de sociedades para las pymes.",
+    party: "junts",
+    why: "Junts lo escribe así en el apartado fiscal: el tipo nominal para las pymes tiene que bajar del 25% al 20%.",
+    distractors: ["psoe", "pp", "erc"],
+  },
+  {
+    id: "peaje",
+    type: "guess",
+    topic: "Carreteras",
+    text: "Si Catalunya gestiona las autovías de alta capacidad, cobrar por usarlas.",
+    party: "junts",
+    why: "Junts pide el traspaso de la gestión de esas carreteras y un sistema de pago por uso en la red de alta capacidad.",
+    distractors: ["erc", "psoe", "pp"],
+  },
+  {
+    id: "sucesiones-ley",
+    family: "sucesiones",
+    type: "guess",
+    topic: "Herencias",
+    originLabel: "Proposición de ley de Vox. BOCG, 12 de enero de 2024. No es una ley aprobada.",
+    text: "Suprimir el impuesto sobre sucesiones y donaciones.",
+    party: "vox",
+    why: "Es la proposición 122/000047, del Grupo Vox, publicada el 12 de enero de 2024. El programa de 2023 ya pedía suprimirlo. Sigue sin ser una ley en vigor.",
+    distractors: ["pp", "psoe", "sumar"],
+  },
+  {
+    id: "nuclear-ley",
+    family: "nuclear",
+    type: "guess",
+    topic: "Energía nuclear",
+    originLabel: "Proposición de ley del PP. BOCG, 11 de abril de 2025. No es una ley aprobada.",
+    text: "Prorrogar las centrales nucleares si cumplen las condiciones de seguridad, y que el plan energético no cuente con cerrarlas.",
+    party: "pp",
+    why: "Es la proposición 122/000179, del Grupo Popular, publicada el 11 de abril de 2025. El artículo 1 permite prorrogar la autorización si hay informe favorable del Consejo de Seguridad Nuclear. El artículo 3 pide que la planificación no contemple el cierre de las nucleares que ya existen.",
+    distractors: ["psoe", "sumar", "vox"],
+  },
+  {
+    id: "temporada-causa",
+    family: "temporada",
+    type: "guess",
+    topic: "Alquiler temporal",
+    originLabel: "Proposición de ley conjunta. BOCG, 5 de julio de 2024. No es una ley aprobada.",
+    prompt: "¿Quién la presentó?",
+    text: "En un alquiler temporal hay que escribir en el contrato por qué lo es. Si no se acredita esa causa, cuenta como vivienda habitual.",
+    party: "grupos-alquiler",
+    why: "Está en la proposición 122/000119, publicada el 5 de julio de 2024. Cambia el artículo 2.3 de la ley de arrendamientos. La firman Sumar, Euskal Herria Bildu, ERC y el Grupo Mixto; en el texto, el Mixto son Podemos y el BNG.",
+    distractors: ["psoe", "pp", "vox"],
+  },
+  {
+    id: "temporada-plazo",
+    family: "temporada",
+    type: "guess",
+    topic: "Alquiler temporal",
+    originLabel: "Proposición de ley conjunta. BOCG, 5 de julio de 2024. No es una ley aprobada.",
+    prompt: "¿Quién la presentó?",
+    text: "Un alquiler temporal no puede pasar de seis meses. Si dura más, o se encadenan más de dos contratos, cuenta como vivienda habitual.",
+    party: "grupos-alquiler",
+    why: "Es el artículo 9 bis de la misma proposición 122/000119. La firman Sumar, Euskal Herria Bildu, ERC y el Grupo Mixto; en el texto, el Mixto son Podemos y el BNG. No es una ley aprobada.",
+    distractors: ["psoe", "pp", "vox"],
   },
 ];
 
@@ -710,6 +862,20 @@ const LANES = {
   "ceuta-ayudas": "bolsillo",
   "ceuta-cuotas": "bolsillo",
   menas: "bolsillo",
+  "jornada-sumar": "bolsillo",
+  avales: "bolsillo",
+  selectividad: "bolsillo",
+  "desalojo-24": "bolsillo",
+  creditos: "bolsillo",
+  sociedades: "bolsillo",
+  "sucesiones-ley": "bolsillo",
+  "nuclear-ley": "bolsillo",
+  "temporada-causa": "bolsillo",
+  "temporada-plazo": "bolsillo",
+  proxenetismo: "derechos",
+  injurias: "derechos",
+  "referendum-int": "territorial",
+  peaje: "territorial",
   lgtbi: "derechos",
   aborto: "derechos",
   eutanasia: "derechos",
@@ -724,7 +890,7 @@ const LANES = {
   aeropuertos: "territorial",
 };
 
-const HOUSING_EXTRA = ["vivienda-compra", "turisticos", "vivienda-congreso"];
+const HOUSING_EXTRA = ["vivienda-compra", "turisticos", "vivienda-congreso", "temporada-causa", "temporada-plazo", "avales", "desalojo-24"];
 
 function allRounds() {
   return [...AGREE, ...GUESS, ...AGREE_CONGRESO, ...GUESS_CONGRESO].map((round) => ({
@@ -733,22 +899,42 @@ function allRounds() {
   }));
 }
 
+function takeRounds(pool, count, usedFamilies) {
+  const available = pool.filter((round) => !round.family || !usedFamilies.has(round.family));
+  const fresh = shuffle(available.filter((round) => !previousIds.has(round.id)));
+  const repeated = shuffle(available.filter((round) => previousIds.has(round.id)));
+  const picked = [];
+  const seenFamilies = new Set();
+  for (const round of [...fresh, ...repeated]) {
+    if (picked.length >= count) break;
+    if (round.family && seenFamilies.has(round.family)) continue;
+    picked.push(cloneRound(round));
+    if (round.family) {
+      seenFamilies.add(round.family);
+      usedFamilies.add(round.family);
+    }
+  }
+  return picked;
+}
+
 function freshGame() {
   const pool = allRounds();
+  const usedFamilies = new Set();
   const byLane = (lane, skip = []) => pool.filter((round) => round.lane === lane && !skip.includes(round.id));
   const housing = [
-    ...pickRounds(pool.filter((round) => round.id === "vivienda-alquiler"), 1),
-    ...pickRounds(pool.filter((round) => HOUSING_EXTRA.includes(round.id)), 1),
+    ...takeRounds(pool.filter((round) => round.id === "vivienda-alquiler"), 1, usedFamilies),
+    ...takeRounds(pool.filter((round) => HOUSING_EXTRA.includes(round.id)), 1, usedFamilies),
   ];
-  const bolsillo = pickRounds(
+  const bolsillo = takeRounds(
     byLane(
       "bolsillo",
       housing.map((round) => round.id)
     ),
-    4
+    4,
+    usedFamilies
   );
-  const derechos = pickRounds(byLane("derechos"), 2);
-  const territorial = pickRounds(byLane("territorial"), 1);
+  const derechos = takeRounds(byLane("derechos"), 2, usedFamilies);
+  const territorial = takeRounds(byLane("territorial"), 1, usedFamilies);
   const rounds = shuffle([...housing, ...bolsillo, ...derechos, ...territorial]);
   previousIds = new Set(rounds.map((round) => round.id));
   state = {
@@ -791,7 +977,7 @@ function render() {
 }
 
 function startView() {
-  const pills = Object.entries(PARTIES).filter(([id]) => id !== "psoe-sumar")
+  const pills = Object.entries(PARTIES).filter(([id]) => id !== "psoe-sumar" && id !== "grupos-alquiler")
     .map(
       ([id, party]) => `
         <div class="party-pill">
@@ -925,7 +1111,7 @@ function feedbackView(round) {
 
 function resultView() {
   const ranking = Object.entries(state.agrees)
-    .filter(([id, count]) => id !== "psoe-sumar" || count > 0)
+    .filter(([id, count]) => (id !== "psoe-sumar" && id !== "grupos-alquiler") || count > 0)
     .sort((a, b) => b[1] - a[1] || partyLabel(a[0]).localeCompare(partyLabel(b[0]), "es"));
   const top = ranking[0][1];
   const winners = ranking.filter(([, count]) => count === top).map(([id]) => id);
