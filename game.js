@@ -45,26 +45,72 @@ const PARTIES = {
 
 const AGREE = [
   {
-    id: "vivienda",
+    id: "vivienda-alquiler",
     type: "agree",
-    topic: "Vivienda",
+    topic: "Alquiler",
     prompt: "¿Con cuál estás más de acuerdo?",
     options: [
       {
         party: "psoe",
-        text: "Llegar a un 20% de vivienda pública y poner límites al precio del alquiler.",
-      },
-      {
-        party: "pp",
-        text: "Derogar la ley de vivienda y avalar a menores de 35 años para que el banco financie hasta el 95% de la casa.",
+        text: "Poner límites al precio del alquiler.",
       },
       {
         party: "sumar",
-        text: "Obligar a los grandes propietarios a ofrecer alquiler social y regular de verdad el precio del alquiler.",
+        text: "Regular de verdad el precio del alquiler.",
+      },
+      {
+        party: "pp",
+        text: "Derogar la ley de vivienda.",
       },
       {
         party: "vox",
-        text: "Quitar el IVA de la primera vivienda habitual y recuperar la deducción por vivienda en la declaración de la renta.",
+        text: "Acabar con el control de los precios del alquiler.",
+      },
+    ],
+  },
+  {
+    id: "vivienda-compra",
+    type: "agree",
+    topic: "Conseguir casa",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "psoe",
+        text: "Llegar a un 20% de vivienda pública.",
+      },
+      {
+        party: "sumar",
+        text: "Obligar a los grandes propietarios a ofrecer alquiler social.",
+      },
+      {
+        party: "pp",
+        text: "Avalar a menores de 35 años para que el banco financie hasta el 95% de la casa.",
+      },
+      {
+        party: "vox",
+        text: "Quitar el IVA de la primera vivienda habitual.",
+      },
+    ],
+  },
+  {
+    id: "turisticos",
+    type: "agree",
+    topic: "Pisos turísticos",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "sumar",
+        text: "Limitar el alquiler turístico y el de temporada para que no sirva para saltarse la ley de vivienda.",
+      },
+      {
+        party: "vox",
+        text: "Una norma igual en toda España para los pisos turísticos, que frene cómo encarecen la vivienda.",
+      },
+      {
+        party: "psoe",
+        text: "Poner el IVA del 21% a los alquileres de corta duración en municipios de más de 10.000 habitantes.",
+        cite: "PSOE · BOCG 30 may 2025",
+        note: "Esto no está en el programa de 2023. Es una proposición de ley del Grupo Socialista, publicada el 30 de mayo de 2025. La misma proposición crea también un impuesto para quien compre una casa sin residir en la Unión Europea.",
       },
     ],
   },
@@ -89,22 +135,154 @@ const AGREE = [
     ],
   },
   {
-    id: "impuestos",
+    id: "fortunas",
     type: "agree",
-    topic: "Impuestos",
+    topic: "Grandes fortunas",
     prompt: "¿Con cuál estás más de acuerdo?",
     options: [
       {
         party: "pp",
-        text: "Quitar el impuesto a las grandes fortunas y bajar un tiempo el IVA de la carne, el pescado y las conservas.",
+        text: "Quitar el impuesto a las grandes fortunas.",
       },
       {
         party: "sumar",
-        text: "Dejar fijo un impuesto a las grandes fortunas, de al menos el 4% en los patrimonios más altos.",
+        text: "Dejarlo fijo, de al menos el 4% en los patrimonios más altos.",
       },
       {
         party: "psoe",
-        text: "Estudiar si se prorroga el impuesto temporal a la banca y a las energéticas, y revisar el de las grandes fortunas.",
+        text: "Evaluar el impuesto temporal a las grandes fortunas antes de decidir si sigue.",
+      },
+    ],
+  },
+  {
+    id: "sucesiones",
+    type: "agree",
+    topic: "Herencias",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "vox",
+        text: "Suprimir el impuesto de sucesiones y donaciones en toda España.",
+      },
+      {
+        party: "sumar",
+        text: "Poner un mínimo en toda España que las comunidades no puedan rebajar.",
+      },
+    ],
+  },
+  {
+    id: "smi",
+    type: "agree",
+    topic: "Salario mínimo",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "sumar",
+        text: "Subir el salario mínimo por encima del IPC, para que no pierda poder de compra.",
+      },
+      {
+        party: "pp",
+        text: "Actualizarlo en el diálogo social, con sindicatos, empresarios y expertos.",
+      },
+      {
+        party: "vox",
+        text: "Subir los salarios, sobre todo los más bajos, y bajar las cargas de las empresas para que eso no destruya empleo.",
+      },
+    ],
+  },
+  {
+    id: "pensiones",
+    type: "agree",
+    topic: "Pensiones",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "psoe",
+        text: "Blindar en la Constitución que las pensiones suban con el IPC.",
+      },
+      {
+        party: "sumar",
+        text: "Mantener la subida con el IPC y subir más las pensiones mínimas, hasta el umbral de la pobreza.",
+      },
+      {
+        party: "pp",
+        text: "Revalorizar las pensiones según el Pacto de Toledo y hacer el sistema más contributivo.",
+      },
+    ],
+  },
+  {
+    id: "dental",
+    type: "agree",
+    topic: "Dentista",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "sumar",
+        text: "Meter el dentista en la sanidad pública.",
+      },
+      {
+        party: "psoe",
+        text: "Ir metiendo empastes e implantes, empezando por los mayores de 75 años.",
+      },
+      {
+        party: "vox",
+        text: "Incluir la salud bucodental y la de la vista en la sanidad pública.",
+      },
+    ],
+  },
+  {
+    id: "coches",
+    type: "agree",
+    topic: "Coches",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "vox",
+        text: "Suspender en Europa la prohibición de vender coches de combustión en 2035.",
+      },
+      {
+        party: "sumar",
+        text: "Que en 2040 ya no circulen en España coches de combustión.",
+      },
+    ],
+  },
+  {
+    id: "educacion",
+    type: "agree",
+    topic: "Colegios",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "pp",
+        text: "Que las familias puedan elegir colegio público, privado o concertado.",
+      },
+      {
+        party: "vox",
+        text: "Un cheque escolar para que cada familia elija el modelo de colegio, también si tiene poco dinero.",
+      },
+      {
+        party: "sumar",
+        text: "Pagar plazas concertadas solo cuando no haya sitio en la pública, y quitar el concierto a los centros que separan por sexo.",
+      },
+    ],
+  },
+  {
+    id: "eutanasia",
+    type: "agree",
+    topic: "Eutanasia",
+    prompt: "¿Con cuál estás más de acuerdo?",
+    options: [
+      {
+        party: "psoe",
+        text: "Defender la ley de eutanasia.",
+      },
+      {
+        party: "vox",
+        text: "Derogar la ley de eutanasia.",
+      },
+      {
+        party: "pp",
+        text: "Revisar la ley de eutanasia con el Comité de Bioética, y reforzar los cuidados paliativos.",
       },
     ],
   },
@@ -288,6 +466,33 @@ const AGREE = [
 
 const GUESS = [
   {
+    id: "iva",
+    type: "guess",
+    topic: "IVA de la comida",
+    text: "Bajar un tiempo el IVA de la carne, el pescado y las conservas.",
+    party: "pp",
+    why: "El PP lo propone solo como un alivio temporal. En su programa va aparte de quitar el impuesto a las grandes fortunas.",
+    distractors: ["psoe", "sumar", "vox"],
+  },
+  {
+    id: "autonomos",
+    type: "guess",
+    topic: "Cuota de autónomos",
+    text: "Tarifa 0 el primer año para quien se haga autónomo, y poder dejar sin pagar tres cuotas al año.",
+    party: "pp",
+    why: "El PP lo llama tarifa 0 y aplazamiento de tres cuotas. Vox pide otra cosa: quitar la cuota a quien no llegue al salario mínimo.",
+    distractors: ["vox", "psoe", "sumar"],
+  },
+  {
+    id: "transporte",
+    type: "guess",
+    topic: "Transporte",
+    text: "Transporte público urbano gratis para niños y estudiantes hasta los 24 años.",
+    party: "psoe",
+    why: "El PSOE lo escribe así: ampliar los descuentos hasta la gratuidad del transporte urbano para niños y estudiantes hasta los 24 años.",
+    distractors: ["sumar", "pp", "vox"],
+  },
+  {
     id: "sanidad-listas",
     type: "guess",
     topic: "Listas de espera",
@@ -407,9 +612,9 @@ const AGREE_CONGRESO = [
     options: [
       {
         party: "psoe",
-        text: "Poner el IVA del 21% a los alquileres de corta duración en municipios de más de 10.000 habitantes, y crear un impuesto para quien compre una casa sin residir en la Unión Europea.",
+        text: "Poner el IVA del 21% a los alquileres de corta duración en municipios de más de 10.000 habitantes.",
         cite: "PSOE · BOCG 30 may 2025",
-        note: "Proposición de ley del Grupo Socialista, publicada el 30 de mayo de 2025. No es la ley de vivienda de 2023: es otra iniciativa, y todavía no está aprobada.",
+        note: "Proposición de ley del Grupo Socialista, publicada el 30 de mayo de 2025. La misma proposición crea también un impuesto para quien compre una casa sin residir en la Unión Europea. No es una ley aprobada.",
       },
       {
         party: "pp",
@@ -478,25 +683,76 @@ function pickRounds(pool, count) {
   return [...fresh, ...repeated].slice(0, count).map(cloneRound);
 }
 
-const PINNED_IDS = ["ocupacion", "inmigracion", "impuestos", "lgtbi", "sanidad"];
+const LANES = {
+  "vivienda-alquiler": "bolsillo",
+  "vivienda-compra": "bolsillo",
+  turisticos: "bolsillo",
+  "vivienda-congreso": "bolsillo",
+  nuclear: "bolsillo",
+  fortunas: "bolsillo",
+  sucesiones: "bolsillo",
+  smi: "bolsillo",
+  jornada: "bolsillo",
+  pensiones: "bolsillo",
+  dental: "bolsillo",
+  coches: "bolsillo",
+  educacion: "bolsillo",
+  inmigracion: "bolsillo",
+  ocupacion: "bolsillo",
+  sanidad: "bolsillo",
+  "sanidad-listas": "bolsillo",
+  iva: "bolsillo",
+  autonomos: "bolsillo",
+  transporte: "bolsillo",
+  herencia: "bolsillo",
+  bono: "bolsillo",
+  anticonceptivos: "bolsillo",
+  "ceuta-ayudas": "bolsillo",
+  "ceuta-cuotas": "bolsillo",
+  menas: "bolsillo",
+  lgtbi: "derechos",
+  aborto: "derechos",
+  eutanasia: "derechos",
+  cannabis: "derechos",
+  toros: "derechos",
+  monarquia: "derechos",
+  vientres: "derechos",
+  violencia: "derechos",
+  catalunya: "territorial",
+  lenguas: "territorial",
+  deficit: "territorial",
+  aeropuertos: "territorial",
+};
+
+const HOUSING_EXTRA = ["vivienda-compra", "turisticos", "vivienda-congreso"];
+
+function allRounds() {
+  return [...AGREE, ...GUESS, ...AGREE_CONGRESO, ...GUESS_CONGRESO].map((round) => ({
+    ...round,
+    lane: LANES[round.id],
+  }));
+}
 
 function freshGame() {
-  const pinned = AGREE.filter((round) => PINNED_IDS.includes(round.id)).map(cloneRound);
-  const agree = shuffle([
-    ...pinned,
-    ...pickRounds(
-      [...AGREE.filter((round) => !PINNED_IDS.includes(round.id)), ...AGREE_CONGRESO],
-      1
+  const pool = allRounds();
+  const byLane = (lane, skip = []) => pool.filter((round) => round.lane === lane && !skip.includes(round.id));
+  const housing = [
+    ...pickRounds(pool.filter((round) => round.id === "vivienda-alquiler"), 1),
+    ...pickRounds(pool.filter((round) => HOUSING_EXTRA.includes(round.id)), 1),
+  ];
+  const bolsillo = pickRounds(
+    byLane(
+      "bolsillo",
+      housing.map((round) => round.id)
     ),
-  ]);
-  const guess = shuffle([
-    ...pickRounds(GUESS_CONGRESO, 1),
-    ...pickRounds(GUESS.filter((round) => round.id === "sanidad-listas"), 1),
-    ...pickRounds(GUESS.filter((round) => round.id !== "sanidad-listas"), 1),
-  ]);
-  previousIds = new Set([...agree, ...guess].map((round) => round.id));
+    4
+  );
+  const derechos = pickRounds(byLane("derechos"), 2);
+  const territorial = pickRounds(byLane("territorial"), 1);
+  const rounds = shuffle([...housing, ...bolsillo, ...derechos, ...territorial]);
+  previousIds = new Set(rounds.map((round) => round.id));
   state = {
-    rounds: [...agree, ...guess],
+    rounds,
     index: 0,
     phase: "start",
     agrees: Object.fromEntries(Object.keys(PARTIES).map((id) => [id, 0])),
@@ -551,7 +807,7 @@ function startView() {
   return `
     <p class="kicker">Elecciones generales 2023</p>
     <h1>Con quién coincides</h1>
-    <p class="lead">Nueve preguntas cortas, y cada partida salen otras. Unas vienen de los programas de 2023. Otras, de proposiciones y proyectos de ley de esta legislatura en el Congreso.</p>
+    <p class="lead">Nueve preguntas, y cada partida salen otras. Seis van de vivienda, trabajo, impuestos o servicios. Dos, de derechos. Una, de cómo se organiza el país.</p>
     <section class="panel">
       <p class="help">En unas eliges la propuesta con la que estás más de acuerdo y después te decimos de qué partido era. En otras te damos una frase y tienes que adivinar el partido.</p>
       <div class="parties">${pills}</div>
