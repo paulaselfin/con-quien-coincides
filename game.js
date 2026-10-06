@@ -1339,34 +1339,39 @@ function feedbackView(round) {
   `;
 }
 
+function signed(count) {
+  return count > 0 ? `+${count}` : `${count}`;
+}
+
 function resultView() {
   const ranking = Object.entries(state.agrees)
-    .filter(([id, count]) => !["psoe-sumar", "grupos-alquiler", "psoe-junts"].includes(id) || count > 0)
+    .filter(([id, count]) => !["psoe-sumar", "grupos-alquiler", "psoe-junts"].includes(id) || count !== 0)
     .sort((a, b) => b[1] - a[1] || partyLabel(a[0]).localeCompare(partyLabel(b[0]), "es"));
   const top = ranking[0][1];
   const winners = ranking.filter(([, count]) => count === top).map(([id]) => id);
-  const agreeTotal = state.rounds.filter(
-    (round) => round.type === "agree" || (round.type === "stance" && round.stance === "agree")
-  ).length;
   const correct = state.guesses.filter((guess) => guess.correct).length;
   const guessTotal = state.guesses.length;
+  const names = joinNames(winners);
   const title =
-    winners.length === 1
-      ? `Has coincidido más con ${partyLabel(winners[0])}`
-      : `Has empatado entre ${joinNames(winners)}`;
-  const detail =
-    winners.length === 1
-      ? `De las ${agreeTotal} propuestas que elegiste porque te convencían, ${top} eran de ${partyLabel(winners[0])}. ${PARTIES[winners[0]].blurb}`
-      : `De las ${agreeTotal} propuestas que elegiste, ${top} eran de cada uno: ${winners.map((id) => PARTIES[id].blurb).join(" ")}`;
+    top > 0
+      ? winners.length === 1
+        ? `Has coincidido más con ${names}`
+        : `Has empatado entre ${names}`
+      : top === 0
+        ? "Ningún partido queda en positivo"
+        : winners.length === 1
+          ? `La puntuación menos baja es la de ${names}`
+          : `La puntuación menos baja está empatada entre ${names}`;
+  const peak = Math.max(...ranking.map(([, count]) => Math.abs(count)), 1);
 
   const bars = ranking
     .map(([id, count]) => {
-      const width = agreeTotal ? (count / agreeTotal) * 100 : 0;
+      const width = (Math.abs(count) / peak) * 100;
       return `
         <div class="bar-row">
           <strong>${partyLabel(id)}</strong>
-          <div class="bar"><i style="width:${width}%;background:${PARTIES[id].color}"></i></div>
-          <span>${count}</span>
+          <div class="bar"><i class="${count < 0 ? "neg" : ""}" style="width:${width}%;background:${PARTIES[id].color}"></i></div>
+          <span class="score-num ${count > 0 ? "pos" : count < 0 ? "neg" : ""}">${signed(count)}</span>
         </div>`;
     })
     .join("");
@@ -1384,11 +1389,13 @@ function resultView() {
   return `
     <p class="kicker">Resultado</p>
     <h1>${title}</h1>
-    <p class="lead">${detail}</p>
     <section class="panel">
-      <h2>Propuestas con las que coincidiste</h2>
+      <h2>Con qué partido coincides</h2>
+      <p class="help">A favor suma 1. En contra resta 1. Si no lo tienes claro, suma 0. Elegir una propuesta entre varias cuenta como a favor.</p>
       <div class="bars">${bars}</div>
-      <h2>Aciertos al adivinar el partido</h2>
+    </section>
+    <section class="panel">
+      <h2>Cuántas autorías has acertado</h2>
       <p class="score-party"><span class="party-name">${correct}/${guessTotal}</span></p>
       <ul class="review">${review}</ul>
       <div class="actions">
@@ -1449,7 +1456,10 @@ function bind() {
     button.addEventListener("click", () => {
       const round = state.rounds[state.index];
       state.picked = button.dataset.party;
-      if (round.type === "stance" && state.stance === "agree") state.agrees[round.party] += 1;
+      if (round.type === "stance") {
+        const delta = state.stance === "agree" ? 1 : state.stance === "disagree" ? -1 : 0;
+        state.agrees[round.party] += delta;
+      }
       state.guesses.push({
         topic: round.topic,
         party: round.party,
